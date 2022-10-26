@@ -16,7 +16,7 @@ The initial plan for the iteration is the following:
 5. Use Terraform for Infrastructure-as-Code
 
 
-# 1 APIs option 1: 7Timer, option 2: API-NBA, option 3: Twitter API
+## 1 APIs
 
 Searching for an API that would provide at least daily data. The API dictates a lot about the project, so finding a meaningful API is important. The data could be numbers where some kind of analysis, statistic or machine learning could be utilized. However, the data could also be in text format.
 
