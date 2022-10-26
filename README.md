@@ -6,6 +6,8 @@ The initial plan for the iteration is the following:
 
 1. Find an interesting API that provides data at least on a weekly rate but preferable on daily or more often.
 
+1.1 API option 1: 7Timer, option 2: API-NBA, option 3: Twitter API
+
 2. Move the data from the API to S3 bucket using AWS Lambda.
 
 3. Use AWS Glue to modify data and to push to a database. The database could be MySql / DynamoDB.
