@@ -27,16 +27,21 @@ The first phase is to search and select an interesting API which provides the da
 The format of the data should be primarily numbers and strings. In order to do some kind of statistical analysis or machine learning, the number format would be the easiest. However, other types of data are not totally excluded from consideration.
 
 1.1 7Timer
+
 7Timer provides data about weather. For example predicting weather in Otaniemi (not sure if this API provides data for that area).
 
 1.2 API-NBA
+
 NBA API provides data about NBA games. For example, predicting if a team wins could be fun. The data might not be frequent enough for this project.
 
 1.3 Twitter API
+
 Twitter API provides tweets. Tweets could be utilized for example in NLP.
 
 1.4 Fingrid API
+
 This API provides data about Finnish electricity production and consumption.
 
 1.5 Norpool API
+
 This Api provides the prices for electricity in the Nordics.
