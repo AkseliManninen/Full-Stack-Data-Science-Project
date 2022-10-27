@@ -1,6 +1,10 @@
 # Project plan
 
+## Project goal
+
 The goal of the project is to create end-to-end data pipeline and visualize the results.
+
+## Project phases
 
 The initial plan for the iteration is the following:
 
@@ -18,14 +22,21 @@ The initial plan for the iteration is the following:
 
 ## 1 APIs
 
-Searching for an API that would provide at least daily data. The API dictates a lot about the project, so finding a meaningful API is important. The data could be numbers where some kind of analysis, statistic or machine learning could be utilized. However, the data could also be in text format.
+The first phase is to search and select an interesting API which provides the data. The API should provide new data often, preferably at least daily. Data is in the core of this project, so finding an awesome API is important.
 
-1.1 7Timer:
-Weather API
+The format of the data should be primarily numbers and strings. In order to do some kind of statistical analysis or machine learning, the number format would be the easiest. However, other types of data are not totally excluded from consideration.
+
+1.1 7Timer
+7Timer provides data about weather. For example predicting weather in Otaniemi (not sure if this API provides data for that area).
 
 1.2 API-NBA
+NBA API provides data about NBA games. For example, predicting if a team wins could be fun. The data might not be frequent enough for this project.
 
 1.3 Twitter API
+Twitter API provides tweets. Tweets could be utilized for example in NLP.
 
-NLP with tweets
+1.4 Fingrid API
+This API provides data about Finnish electricity production and consumption.
+
+Selected API: Fingrid API
 
