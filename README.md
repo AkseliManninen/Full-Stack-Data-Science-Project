@@ -38,5 +38,5 @@ Twitter API provides tweets. Tweets could be utilized for example in NLP.
 1.4 Fingrid API
 This API provides data about Finnish electricity production and consumption.
 
-Selected API: Fingrid API
-
+1.5 Norpool API
+This Api provides the prices for electricity in the Nordics.
