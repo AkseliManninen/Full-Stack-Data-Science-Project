@@ -10,15 +10,14 @@ The initial plan for the iteration is the following:
 
 1. Find an interesting API that provides data at least on a weekly rate but preferable on daily or more often.
 
-2. Move the data from the API to S3 bucket using AWS Lambda.
+2. Establish the resources on AWS using Terraform (Infrastructure-as-Code)
+
+2. Write a AWS Lambda function in Python that fetches the data from the API and stores the data in S3 bucket.
 
 3. Use AWS Glue to modify data and to push to a database. The database could be MySql / DynamoDB.
 3. Or use SageMaker to do ML on the data, and then push to a database.
 
 4. Visualize the results, either in PowerBI, or construct a Flask website.
-
-5. Use Terraform for Infrastructure-as-Code
-
 
 ## 1 APIs
 
