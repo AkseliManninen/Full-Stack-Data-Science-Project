@@ -53,5 +53,10 @@ Selected API was Fingrid, as it provided interesting data and did not require ex
 
 ## 2. Architecture
 
+This is the planned architecture roughly. There still might be some changes regarding for example glue and sagemaker but otherwise it should describe the final architecture accurately.
+
 ![image](https://user-images.githubusercontent.com/75692903/198521668-4c653f48-6ca4-496b-b622-cbc48ef4e733.png)
 
+## 3. Terraform
+
+The next step is to define AWS resources using Terraform. Before doing so, check the possibilities for authentication.
