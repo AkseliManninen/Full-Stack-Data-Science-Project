@@ -53,4 +53,5 @@ Selected API was Fingrid, as it provided interesting data and did not require ex
 
 ## 2. Architecture
 
-![image](https://user-images.githubusercontent.com/75692903/198520998-a06ea261-fbcd-4d87-9c62-94cd7f2db05a.png)
+![image](https://user-images.githubusercontent.com/75692903/198521668-4c653f48-6ca4-496b-b622-cbc48ef4e733.png)
+
