@@ -23,7 +23,7 @@ The initial plan for the iteration is the following:
 
 7. Document the project in a READ.me file.
 
-## 1 APIs
+## 1. APIs
 
 The first phase is to search and select an interesting API which provides the data. The API should provide new data often, preferably at least daily. Data is in the core of this project, so finding an awesome API is important.
 
@@ -50,3 +50,7 @@ This API provides data about Finnish electricity production and consumption.
 This Api provides the prices for electricity in the Nordics.
 
 Selected API was Fingrid, as it provided interesting data and did not require excessive work to aqcuire the authentication token. For later, it could be considered to for example scrape some data from Nordpool.
+
+## 2. Architecture
+
+![image](https://user-images.githubusercontent.com/75692903/198520998-a06ea261-fbcd-4d87-9c62-94cd7f2db05a.png)
