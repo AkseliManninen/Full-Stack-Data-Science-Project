@@ -58,10 +58,12 @@ This is the planned architecture roughly. There still might be some changes rega
 ![image](https://user-images.githubusercontent.com/75692903/198521668-4c653f48-6ca4-496b-b622-cbc48ef4e733.png)
 
 ## 3. Terraform
-
-The next step is to define AWS resources using Terraform. Before doing so, check the possibilities for authentication.
+The next step is to define AWS resources using Terraform. 
 
 
 ## Requirements:
 - Terraform
 - AWS CLI
+
+## Other 
+Configuring AWS with CLI (aws configure command):https://www.youtube.com/watch?v=XxTcw7UTues
