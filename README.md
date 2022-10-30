@@ -10,17 +10,20 @@ The initial plan for the iteration is the following:
 
 1. Find an interesting API that provides data at least on a weekly rate but preferable on daily or more often.
 
-2. Move the data from the API to S3 bucket using AWS Lambda.
+2. Draw the architecture for the project.
 
-3. Use AWS Glue to modify data and to push to a database. The database could be MySql / DynamoDB.
-3. Or use SageMaker to do ML on the data, and then push to a database.
+3. Establish the resources on AWS using Terraform (Infrastructure-as-Code)
 
-4. Visualize the results, either in PowerBI, or construct a Flask website.
+4. Write a AWS Lambda function in Python that fetches the data from the API and stores the data in S3 bucket.
 
-5. Use Terraform for Infrastructure-as-Code
+5. Use AWS Glue to modify data and to push to a database. The database could be MySql / DynamoDB.
+5. Or use SageMaker to do ML on the data, and then push to a database.
 
+6. Visualize the results, either in PowerBI, or construct a Flask website.
 
-## 1 APIs
+7. Document the project in a READ.me file.
+
+## 1. APIs
 
 The first phase is to search and select an interesting API which provides the data. The API should provide new data often, preferably at least daily. Data is in the core of this project, so finding an awesome API is important.
 
@@ -47,3 +50,18 @@ This API provides data about Finnish electricity production and consumption.
 This Api provides the prices for electricity in the Nordics.
 
 Selected API was Fingrid, as it provided interesting data and did not require excessive work to aqcuire the authentication token. For later, it could be considered to for example scrape some data from Nordpool.
+
+## 2. Architecture
+
+This is the planned architecture roughly. There still might be some changes regarding for example glue and sagemaker but otherwise it should describe the final architecture accurately.
+
+![image](https://user-images.githubusercontent.com/75692903/198521668-4c653f48-6ca4-496b-b622-cbc48ef4e733.png)
+
+## 3. Terraform
+
+The next step is to define AWS resources using Terraform. Before doing so, check the possibilities for authentication.
+
+
+## Requirements:
+- Terraform
+- AWS CLI
