@@ -68,6 +68,10 @@ The next step is to define AWS resources using Terraform.
 ## Requirements:
 - Terraform
 - AWS CLI
+- requests library
 
 ## Other 
 Configuring AWS with CLI (aws configure command):https://www.youtube.com/watch?v=XxTcw7UTues
+
+## Installing request with AWS Lambda layer
+- create a folder called python > pip3 install requests -t . --no-user > zip folder > add as a lambda layer (apparently the folder and zip needs to be named python to work): https://www.youtube.com/watch?v=3BH79Uciw5w&t=70s
