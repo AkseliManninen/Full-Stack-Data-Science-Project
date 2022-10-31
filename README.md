@@ -59,6 +59,8 @@ This is the planned architecture roughly. There still might be some changes rega
 
 AWS Lambda makes API calls to fetch data and then stores the data in a S3 bucket. Lambda is triggered by Cloudwatch (add to the architecture) daily. From the S3 bucket Glue reads the data, modifies it and stores to a database. From a database data can be accessed with PowerBI which has built-in integration.
 
+Also, the API token needs to be stored in KMS. (Add later to the architecture)
+
 ## 3. Terraform
 The next step is to define AWS resources using Terraform. 
 
