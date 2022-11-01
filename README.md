@@ -21,7 +21,9 @@ The initial plan for the iteration is the following:
 
 6. Visualize the results, either in PowerBI, or construct a Flask website.
 
-7. Document the project in a READ.me file.
+7. Add tests
+
+8. Document the project in a READ.me file.
 
 ## 1. APIs
 
