@@ -66,6 +66,12 @@ Also, the API token needs to be stored in KMS. (Add later to the architecture)
 ## 3. Terraform
 The next step is to define AWS resources using Terraform. 
 
+- S3 - Ok
+- Lambda - Ok
+- Cloud Watch
+- Glue
+- RDS
+- 
 
 ## Requirements:
 - Terraform
