@@ -21,7 +21,9 @@ The initial plan for the iteration is the following:
 
 6. Visualize the results, either in PowerBI, or construct a Flask website.
 
-7. Document the project in a READ.me file.
+7. Add tests
+
+8. Document the project in a READ.me file.
 
 ## 1. APIs
 
@@ -57,13 +59,27 @@ This is the planned architecture roughly. There still might be some changes rega
 
 ![image](https://user-images.githubusercontent.com/75692903/198521668-4c653f48-6ca4-496b-b622-cbc48ef4e733.png)
 
+AWS Lambda makes API calls to fetch data and then stores the data in a S3 bucket. Lambda is triggered by Cloudwatch (add to the architecture) daily. From the S3 bucket Glue reads the data, modifies it and stores to a database. From a database data can be accessed with PowerBI which has built-in integration.
+
+Also, the API token needs to be stored in KMS. (Add later to the architecture)
+
 ## 3. Terraform
 The next step is to define AWS resources using Terraform. 
 
+- S3 - Ok
+- Lambda - Ok
+- Cloud Watch
+- Glue
+- RDS
+- 
 
 ## Requirements:
 - Terraform
 - AWS CLI
+- requests library
 
 ## Other 
 Configuring AWS with CLI (aws configure command):https://www.youtube.com/watch?v=XxTcw7UTues
+
+## Installing request with AWS Lambda layer
+- create a folder called python > pip3 install requests -t . --no-user > zip folder > add as a lambda layer (apparently the folder and zip needs to be named python to work): https://www.youtube.com/watch?v=3BH79Uciw5w&t=70s
