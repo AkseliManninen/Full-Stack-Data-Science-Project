@@ -1,7 +1,7 @@
 # Lambda function
 data "archive_file" "python_lambda_package" {  
   type = "zip"  
-  source_file = "fetch_data.py" 
+  source_file = "FetchData.py" 
   output_path = "lambda_function.zip"
 }
 
@@ -25,11 +25,12 @@ resource "aws_iam_role" "iam_role_for_lambda" {
 EOF
 }
 
-resource "aws_lambda_function" "fetch_data" {
+resource "aws_lambda_function" "FetchData" {
   filename      = "lambda_function.zip"
   function_name = "fetch_data_lambda"
   role          = aws_iam_role.iam_role_for_lambda.arn
-  handler       = "fetch_data.lambda_handler" 
+  handler       = "FetchData.lambda_handler" 
+  layers        = ["arn:aws:lambda:eu-west-1:065739622999:layer:python_layer:1"]
 
   runtime = "python3.8"
 
