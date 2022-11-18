@@ -57,7 +57,8 @@ Selected API was Fingrid, as it provided interesting data and did not require ex
 
 This is the planned architecture roughly. There still might be some changes regarding for example glue and sagemaker but otherwise it should describe the final architecture accurately.
 
-![image](https://user-images.githubusercontent.com/75692903/198521668-4c653f48-6ca4-496b-b622-cbc48ef4e733.png)
+![image](https://user-images.githubusercontent.com/75692903/202675891-da3d7c2d-ca6f-41df-8d8e-6543208d7601.png)
+
 
 AWS Lambda makes API calls to fetch data and then stores the data in a S3 bucket. Lambda is triggered by Cloudwatch (add to the architecture) daily. From the S3 bucket Glue reads the data, modifies it and stores to a database. From a database data can be accessed with PowerBI which has built-in integration.
 
