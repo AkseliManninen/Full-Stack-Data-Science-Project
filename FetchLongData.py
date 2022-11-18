@@ -1,8 +1,5 @@
 import boto3
-import urllib3
 import requests
-import json
-from datetime import date
 
 # Get the token for the API
 token = "djnK2W5vhk3W4fDZIZA9ka3Blr4ncJsv4R3mgFYK"
@@ -11,8 +8,8 @@ token = "djnK2W5vhk3W4fDZIZA9ka3Blr4ncJsv4R3mgFYK"
 headers = {'x-api-key': token}
 
 # Randomly selected start and end times
-start_time = "2020-00-00T00:00:00+03:00"
-end_time = "2022-11-16T00:00:00+03:00"
+start_time = "2020-01-01T00:00:00+00:00"
+end_time = "2022-11-16T23:00:00+00:00"
 
 query = {
         "start_time": start_time,
@@ -30,14 +27,12 @@ bucket_name = "electricity-data-bucket"
 file_name = "electricity_data.csv"
 s3_path = file_name
 
+string = response.text
+
+s3 = boto3.resource("s3")
+s3.Bucket(bucket_name).put_object(Key=s3_path, Body=string)
 
 def lambda_handler(event, context):
-
-    string = response.text
-
-    s3 = boto3.resource("s3")
-    
-    s3.Bucket(bucket_name).put_object(Key=s3_path, Body=string)
     return {
         'statusCode': 200,
     }
