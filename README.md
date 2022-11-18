@@ -1,4 +1,4 @@
-# Project plan
+# Project description
 
 ## Project goal
 
@@ -66,12 +66,12 @@ Also, the API token needs to be stored in KMS. (Add later to the architecture)
 ## 3. Terraform
 The next step is to define AWS resources using Terraform. 
 
-- S3 - Ok
-- Lambda - Ok
-- Cloud Watch
-- Glue
-- RDS
-- 
+- S3 - Store data fetched from the API 🟢
+- Lambda function 1 - Fetches 1 year of data and adds it to S3  🟡
+- Lambda function 2 - Fetches the data from previous day and adds it to the existing csv 🟡
+- Cloud Watch 🔴
+- Glue 🔴
+- RDS 🔴
 
 About roles: Lambda was assigned a previously created role that allows it to upload to S3
 
