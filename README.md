@@ -69,7 +69,7 @@ The next step is to define AWS resources using Terraform.
 - S3 - Store data fetched from the API 🟢
 - Lambda function 1 - Fetches 1 year of data and adds it to S3  🟡
 - Lambda function 2 - Fetches the data from previous day and adds it to the existing csv 🟡
-- Cloud Watch 🔴
+- Cloud Watch - Triggers the Lambda function 2 daily 🔴
 - Glue 🔴
 - RDS 🔴
 
