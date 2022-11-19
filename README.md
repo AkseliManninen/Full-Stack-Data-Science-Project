@@ -70,7 +70,7 @@ The next step is to define AWS resources using Terraform.
 - Lambda function1 - Fetches 1 year of data and adds it to S3  🟢
 - Lambda function2 - Fetches the data from previous day and adds it to the existing csv 🟢
 - Cloud Watch - Triggers the Lambda function2 daily 🟢
-- Glue 🔴
+- Glue 🟡
 - RDS 🔴
 
 About roles: Lambda was assigned a previously created role that allows it to upload to S3
