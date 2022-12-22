@@ -76,6 +76,7 @@ The next step is to define AWS resources using Terraform.
 
 About roles: Lambda was assigned a previously created role that allows it to upload to S3
 
+
 ## Requirements:
 - Terraform
 - AWS CLI
