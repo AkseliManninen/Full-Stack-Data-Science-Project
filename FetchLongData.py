@@ -1,3 +1,5 @@
+# Python script used in a Lambda function to fetch once data from API
+
 import boto3
 import requests
 
