@@ -1,5 +1,4 @@
 # IAM role for glue
-
 resource "aws_iam_role" "iam_role_for_glue" {
   name = "iam_role_s3_glue"
 
@@ -18,6 +17,55 @@ resource "aws_iam_role" "iam_role_for_glue" {
   ]
 }
 EOF
+}
+
+# IAM policy for Glue crawler
+resource "aws_iam_policy" "glue_crawler_policy" {
+  name = "glue_crawler_policy"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::electricity-data-bucket"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateDatabase",
+        "glue:CreateTable",
+        "glue:UpdateTable",
+        "glue:GetDatabase",
+        "glue:GetTable"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_policy_attachment" "attach_glue_crawler_policy" {
+  name       = "attach_glue_crawler_policy"
+  policy_arn = aws_iam_policy.glue_crawler_policy.arn
+  roles      = [aws_iam_role.iam_role_for_glue.name]
 }
 
 # Glue database
