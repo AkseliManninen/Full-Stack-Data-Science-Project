@@ -72,6 +72,10 @@ The next step is to define AWS resources using Terraform.
 - Cloud Watch - Triggers the Lambda function2 daily 🟢
 - Cloud Watch - Triggers the Glue daily 🟢
 - Glue 🟡
+  - Glue databases for S3 and RDS 🟢
+  - Glue crawler for S3 🟢
+  - Glue crawler for RDS 🟢
+  - Glue job 🟡
 - RDS 🟡
 About roles: Lambda was assigned a previously created role that allows it to upload to S3
 
