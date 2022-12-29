@@ -67,10 +67,12 @@ Also, the API token needs to be stored in KMS. (Add later to the architecture)
 The next step is to define AWS resources using Terraform. 
 
 - S3 - Store data fetched from the API 🟢
-- Lambda function1 - Fetches 1 year of data and adds it to S3  🟢
-- Lambda function2 - Fetches the data from previous day and adds it to the existing csv 🟢
-- Cloud Watch - Triggers the Lambda function2 daily 🟢
-- Cloud Watch - Triggers the Glue daily 🟢
+- Lambda 🟢
+-   Lambda function 1 - Fetches 1 year of data and adds it to S3  🟢
+-   Lambda function 2 - Fetches the data from previous day and adds it to the existing csv 🟢
+- Cloud Watch
+  - Event rule - Triggers the Lambda function 2 daily 🟢
+  - Event rule - Triggers Glue crawlers daily 🟡
 - Glue 🟡
   - Glue databases for S3 and RDS 🟢
   - Glue crawler for S3 🟢
