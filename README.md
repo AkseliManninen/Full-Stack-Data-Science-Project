@@ -8,7 +8,7 @@ Data is collected from two APIs:
 1. Fingrid API - The API provides data about Finnish electricity production and consumption.
 2. Nordpool API - The API provides the prices for electricity in the Nordisc.
 
-The data is collected from the APIs daily to Amazon Web Services' S3 data strorage using AWS Lambda functions. Then the data is moved from S3 with an ETL tool AWS Glue to a MySQL relational database. From there a connection is established with Google's Looker Studio, and the data is visualised. The aim is that the analytics are then embedded on a website.
+The data is collected from the APIs to Amazon Web Services' S3 data strorage using AWS Lambda functions. A Lambda function is triggered daily by Cloudwatch. Then the data is moved from S3 with an ETL tool AWS Glue to a MySQL relational database. From there a connection is established with Google's Looker Studio, and the data is visualised. The aim is that the analytics are then embedded on a website.
 
 In the project, Github is used for version control and Terraform is used for Infrastructure-as-Code.
 
@@ -17,8 +17,6 @@ In the project, Github is used for version control and Terraform is used for Inf
 The graph below describes the implemented architecture rougly. There will be some additional components like for example AWS CloudWatch triggering Glue, which is not included yet in the desing.
 
 ![image](https://user-images.githubusercontent.com/75692903/202676304-f727613e-2ad1-4a6b-aee0-0b1c3fd7522d.png)
-
-AWS Lambda makes API calls to fetch data and then stores the data in a S3 bucket. Lambda is triggered by Cloudwatch (add to the architecture) daily. From the S3 bucket Glue reads the data, modifies it and stores to a database. From a database data can be accessed with PowerBI which has built-in integration.
 
 ## 3. Terraform
 The next step is to define AWS resources using Terraform. 
