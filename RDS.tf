@@ -72,22 +72,27 @@ resource "aws_glue_crawler" "my_sql_crawler" {
 # Creating variables
 variable "subnet_id" {
   type        = string
+  description = "subnet id variable"
 }
 
 variable "mysql_username" {
   type        = string
+  description = "username for MySql"
 }
 
 variable "mysql_password" {
   type        = string
+  description = "Password for MySql"
 }
 
 variable "connection_url" {
   type        = string
+  description = "Database connection url"
 }
 
 variable "security_group_id_list" {
   type        = string
+  description = "Security group id"
 }
 
 
