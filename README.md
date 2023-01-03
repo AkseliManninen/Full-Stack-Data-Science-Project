@@ -29,9 +29,6 @@ The next step is to define AWS resources using Terraform.
 - Cloud Watch 🟡
   - Event rule - Triggers the Lambda function 2 daily 🟢
   - Event rule - Triggers Glue crawlers daily 🟡
-  
-  
- <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/504f2c95-452d-438b-9a23-57faa79c0a3c/page/T2cBD" frameborder="0" style="border:0" allowfullscreen></iframe>
 - Glue 
   - Glue databases for S3 and RDS 🟢
   - Glue crawler for S3 🟢
@@ -49,3 +46,5 @@ Configuring AWS with CLI (aws configure command): https://www.youtube.com/watch?
 
 ## Installing request with AWS Lambda layer
 - create a folder called python > pip3 install requests -t . --no-user > zip folder > add as a lambda layer (apparently the folder and zip needs to be named python to work): https://www.youtube.com/watch?v=3BH79Uciw5w&t=70s
+
+ <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/504f2c95-452d-438b-9a23-57faa79c0a3c/page/T2cBD" frameborder="0" style="border:0" allowfullscreen></iframe>
