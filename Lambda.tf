@@ -18,7 +18,7 @@ resource "aws_lambda_function" "FetchData" {
   function_name = "fetch_data_lambda"
   role          = data.aws_iam_role.iam_role_for_lambda.arn
   handler       = "FetchData.lambda_handler" 
-  layers        = ["arn:aws:lambda:eu-west-1:065739622999:layer:python_layer:1", "arn:aws:lambda:eu-west-1:065739622999:layer:python_requests_pandas_numpy:1"]
+  layers        = ["arn:aws:lambda:eu-west-1:065739622999:layer:python_layer:1", "arn:aws:lambda:eu-west-1:336392948345:layer:AWSSDKPandas-Python38:2"]
   source_code_hash = filebase64sha256("lambda_function.zip") # Needed to have to include the changes in the python file to the lambda function.
 
   runtime = "python3.8"
@@ -67,7 +67,7 @@ resource "aws_lambda_function" "FetchLongData" {
   function_name = "fetch_long_data_lambda"
   role          = data.aws_iam_role.iam_role_for_lambda.arn
   handler       = "FetchLongData.lambda_handler" 
-  layers        = ["arn:aws:lambda:eu-west-1:065739622999:layer:python_layer:1", "arn:aws:lambda:eu-west-1:065739622999:layer:python_requests_pandas_numpy:1"]
+  layers        = ["arn:aws:lambda:eu-west-1:065739622999:layer:python_layer:1", "arn:aws:lambda:eu-west-1:336392948345:layer:AWSSDKPandas-Python38:2"]
   source_code_hash = filebase64sha256("fetch_long_data.zip") # Needed to have to include the changes in the python file to the lambda function.
 
   runtime = "python3.8"
