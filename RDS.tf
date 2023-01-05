@@ -21,26 +21,6 @@ resource "aws_glue_catalog_database" "my_database" {
   name = "mysql_database"
 }
 
-resource "aws_glue_catalog_table" "my_table" {
-  database_name = aws_glue_catalog_database.my_database.name
-  name          = "mysql_table"
-  storage_descriptor {
-    columns {
-        name    = "start"
-        type    = "string"
-      }
-    columns {
-        name    = "end"
-        type    = "string"
-      }
-    columns {
-        name    = "value"
-        type    = "int"
-        comment = "electricity consumption in Finland"
-      }
- }
-}
-
 # Creates a Glue connection to MySQL
 resource "aws_glue_connection" "glue_connection" {
   connection_properties = {
