@@ -109,6 +109,6 @@ resource "aws_glue_job" "glue_job_S3_to_RDS" {
    glue_version =  "3.0"
 
    command {
-     script_location = "s3://${aws_s3_bucket.script-bucket.bucket}/scripts/Test-Electricity-Delete.py"
+     script_location = "s3://${aws_s3_bucket.script-bucket.bucket}/scripts/electricity-data-glue-job.py"
    }
  }
