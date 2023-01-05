@@ -29,7 +29,7 @@ The next step is to define AWS resources using Terraform.
 - Cloud Watch 🟡
   - Event rule - Triggers the Lambda function 2 daily 🟢
   - Event rule - Triggers Glue crawlers daily 🟡
-- Glue 
+- Gl
   - Glue databases for S3 and RDS 🟢
   - Glue crawler for S3 🟢
   - Glue crawler for RDS 🟢
@@ -45,6 +45,10 @@ The next step is to define AWS resources using Terraform.
 Configuring AWS with CLI (aws configure command): https://www.youtube.com/watch?v=XxTcw7UTues
 
 ## Report sneak peek
+
+A report sneak peek is available at: https://akselimanninen.github.io/Electricity-Data-Project/ 
+
+At this point, this is only a MVP for displaying that the pipeline works. The pipeline is built currently only for 'Electricity Consumption in Finland' and the rest of the rest of the information will be available later.
 
 <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/504f2c95-452d-438b-9a23-57faa79c0a3c/page/T2cBD" frameborder="0" style="border:0" allowfullscreen></iframe>
 
