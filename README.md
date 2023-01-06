@@ -2,6 +2,14 @@
 
 The electricity data project was established in the mids of an European energy crisis. The motivation for the project is to to distribute electricity related infromation in a structed and insightful way. The data is collected from public sources.
 
+## Project sneak peak
+
+A report sneak peek website is available at: https://akselimanninen.github.io/Electricity-Data-Project/ 
+
+At this point, this is only a MVP for displaying that the pipeline works. The pipeline is built currently only for a few variables from Fingrid and the rest of the rest of the information will be available later.
+
+![image](https://user-images.githubusercontent.com/75692903/211030563-faa83ee0-0750-4e41-aeaa-e2604324b07c.png)
+
 ## Project implementation
 
 Data is collected from two APIs: 
@@ -39,18 +47,10 @@ The next step is to define AWS resources using Terraform.
 ## Requirements:
 - Terraform
 - AWS CLI
-- requests library
+- requests, lambda and numpy library
 
 ## Other 
 Configuring AWS with CLI (aws configure command): https://www.youtube.com/watch?v=XxTcw7UTues
-
-## Report sneak peek
-
-A report sneak peek is available at: https://akselimanninen.github.io/Electricity-Data-Project/ 
-
-At this point, this is only a MVP for displaying that the pipeline works. The pipeline is built currently only for 'Electricity Consumption in Finland' and the rest of the rest of the information will be available later.
-
-<iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/504f2c95-452d-438b-9a23-57faa79c0a3c/page/T2cBD" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 ## Installing request with AWS Lambda layer
 - create a folder called python > pip3 install requests -t . --no-user > zip folder > add as a lambda layer (apparently the folder and zip needs to be named python to work): https://www.youtube.com/watch?v=3BH79Uciw5w&t=70s
