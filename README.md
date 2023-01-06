@@ -2,7 +2,7 @@
 
 The electricity data project was established in the mids of an European energy crisis. The motivation for the project is to to distribute electricity related infromation in a structed and insightful way. The data is collected from public sources.
 
-## Project sneak peak
+## Project sneak peek
 
 A report sneak peek website is available at: https://akselimanninen.github.io/Electricity-Data-Project/ 
 
