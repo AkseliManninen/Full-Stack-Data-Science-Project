@@ -6,7 +6,7 @@ The electricity data project was established in the mids of an European energy c
 
 A report sneak peek website is available at: https://akselimanninen.github.io/Electricity-Data-Project/ 
 
-At this point, this is only a MVP for displaying that the pipeline works. The pipeline is built currently only for a few variables from Fingrid and the rest of the rest of the information will be available later.
+At this point, this is only a MVP for displaying that the pipeline works. The pipeline is built currently only for a few variables from Fingrid and the rest of the information will be available later.
 
 ![image](https://user-images.githubusercontent.com/75692903/211030563-faa83ee0-0750-4e41-aeaa-e2604324b07c.png)
 
