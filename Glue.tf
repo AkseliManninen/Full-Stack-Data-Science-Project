@@ -113,25 +113,13 @@ resource "aws_glue_job" "glue_job_S3_to_RDS" {
    }
  }
 
- # Creates a Cloudwatch event rule that triggers daily
-resource "aws_cloudwatch_event_rule" "trigger_glue_job" {
-    name = "trigger_glue_job"
-    description = "Fires every day at 01.10"
-    # rate every day at 01.10 UTC
-    schedule_expression = "cron(10 1 * * ? *)"
+ # Creating a daily trigger for the Glue job
+resource "aws_glue_trigger" "example" {
+  name            = "trigger"
+  type            = "SCHEDULED"
+  schedule        = "cron(10 1 * * ? *)" # Fires at 01:10
+  actions {
+    job_name = aws_glue_job.glue_job_S3_to_RDS.name
+  }
 }
 
-# # Creates a Cloudwatch event target that runs the Glue job
-# resource "aws_cloudwatch_event_target" "run_glue_job_daily" {
-#     rule = aws_cloudwatch_event_rule.trigger_glue_job.name
-#     target_id = "trigger_glue_job"
-#     arn = aws_glue_job.glue_job_S3_to_RDS.arn
-# }
-
-# # Creates a permissions for Cloudwatch
-# resource "aws_glue_permission" "allow_run_glue_job" {
-#   statement_id = "AllowGlueExecutionFromCloudWatch"
-#   action = "glue: *"
-#   principal = "AllowGlueExecutionFromCloudWatch"
-#   source_arn = aws_cloudwatch_event_rule.trigger_glue_job.arn
-#   }
