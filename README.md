@@ -22,7 +22,7 @@ In the project, Github is used for version control and Terraform is used for Inf
 
 ## Architecture
 
-The graph below describes the implemented architecture rougly. There will be some additional components like for example AWS CloudWatch triggering Glue, which is not included yet in the desing.
+The graph below describes the implemented architecture.
 
 ![image](https://user-images.githubusercontent.com/75692903/202676304-f727613e-2ad1-4a6b-aee0-0b1c3fd7522d.png)
 
