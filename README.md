@@ -34,10 +34,9 @@ The next step is to define AWS resources using Terraform.
 -   Lambda function 1 - Fetches 1 year of data and adds it to S3  🟢
 -   Lambda function 2 - Fetches the data from previous day and adds it to the existing csv 🟢
 -   Include NordPool and more data points from Fingrid 🟡
-- Cloud Watch 🟡
+- Cloud Watch 🟢
   - Event rule - Triggers the Lambda function 2 daily 🟢
-  - Event rule - Triggers Glue crawlers daily 🟡
-- Gl
+- Glue
   - Glue databases for S3 and RDS 🟢
   - Glue crawler for S3 🟢
   - Glue crawler for RDS 🟢
