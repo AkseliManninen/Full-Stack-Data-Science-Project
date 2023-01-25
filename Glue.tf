@@ -113,13 +113,33 @@ resource "aws_glue_job" "glue_job_S3_to_RDS" {
    }
  }
 
- # Creating a daily trigger for the Glue job
-resource "aws_glue_trigger" "example" {
-  name            = "trigger"
+# Creating a daily trigger for the Glue job
+resource "aws_glue_trigger" "trigger_glue_job" {
+  name            = "trigger_glue_job"
+  type            = "SCHEDULED"
+  schedule        = "cron(20 1 * * ? *)" # Fires at 01:20
+  actions {
+    job_name = aws_glue_job.glue_job_S3_to_RDS.name
+  }
+}
+
+# Creating a daily trigger for the S3 glue crawler
+resource "aws_glue_trigger" "trigger_s3_crawler" {
+  name            = "trigger_S3_crawler"
   type            = "SCHEDULED"
   schedule        = "cron(10 1 * * ? *)" # Fires at 01:10
   actions {
-    job_name = aws_glue_job.glue_job_S3_to_RDS.name
+    crawler_name = aws_glue_crawler.s3_crawler.name
+  }
+}
+
+# Creating a daily trigger for the MySql glue crawler
+resource "aws_glue_trigger" "trigger_mysql_crawler" {
+  name            = "trigger_mysql_crawler"
+  type            = "SCHEDULED"
+  schedule        = "cron(10 1 * * ? *)" # Fires at 01:10
+  actions {
+    crawler_name = aws_glue_crawler.my_sql_crawler.name
   }
 }
 
