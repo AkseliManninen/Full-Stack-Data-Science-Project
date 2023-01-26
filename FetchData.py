@@ -14,12 +14,41 @@ yesterday_str = yesterday.strftime("%Y-%m-%d")
 today_str = date.today().strftime("%Y-%m-%d")
 
 # Get the token for the API
-token = ## Add token here
+token = "djnK2W5vhk3W4fDZIZA9ka3Blr4ncJsv4R3mgFYK"
 
 # Header for the api
 headers = {'x-api-key': token}
 
+# Fetch yesterdays data
 start_time = yesterday_str + "T00:00:00+00:00"
+end_time = yesterday_str + "T23:00:00+00:00"
+
+
+query = {
+        "start_time": start_time,
+        "end_time": end_time,
+        }
+
+variables = ["74", "124", "165", "166"]
+dataframes = []
+
+for variable in variables:
+    url = f"https://api.fingrid.fi/v1/variable/{variable}/events/csv?"
+
+    response = requests.get(url, headers=headers, params = query)
+
+    # Creates a file-like object from the string
+    file = StringIO(response.text)
+
+    # Read the CVS data from the file-like object into a Pandas dataframe
+    df = pd.read_csv(file)
+
+    df.rename(columns = {'value': variable}, inplace= True)
+
+    dataframes.append(df)
+
+# Fetch today's predictions
+start_time = today_str + "T00:00:00+00:00"
 end_time = today_str + "T23:00:00+00:00"
 
 
@@ -28,8 +57,7 @@ query = {
         "end_time": end_time,
         }
 
-variables = ["74", "124", "165", "166", "241", "242"]
-dataframes = []
+variables = ["241", "242"]
 
 for variable in variables:
     url = f"https://api.fingrid.fi/v1/variable/{variable}/events/csv?"
@@ -54,8 +82,6 @@ for dataframe in dataframes:
         data = pd.merge(data, dataframe, on = ["start_time", "end_time"], how = "outer")
 
 # Modifies the Pandas dataframe into a csv file
-
-# header = False pystyy säätäää, ettei tuu otsikot mukaa
 data = data.to_csv(index = False, header = False)
 
 bucket_name = "electricity-data-bucket"
@@ -77,8 +103,6 @@ def lambda_handler(event, context):
     return {
         'statusCode': 200,
     }
-
-
 
 
 #----------------------------------------------

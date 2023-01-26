@@ -127,7 +127,7 @@ resource "aws_glue_trigger" "trigger_glue_job" {
 resource "aws_glue_trigger" "trigger_s3_crawler" {
   name            = "trigger_S3_crawler"
   type            = "SCHEDULED"
-  schedule        = "cron(10 1 * * ? *)" # Fires at 01:10
+  schedule        = "cron(10 3 * * ? *)" # Fires at 01:10 (UTC 0)
   actions {
     crawler_name = aws_glue_crawler.s3_crawler.name
   }
@@ -137,7 +137,7 @@ resource "aws_glue_trigger" "trigger_s3_crawler" {
 resource "aws_glue_trigger" "trigger_mysql_crawler" {
   name            = "trigger_mysql_crawler"
   type            = "SCHEDULED"
-  schedule        = "cron(10 1 * * ? *)" # Fires at 01:10
+  schedule        = "cron(10 3 * * ? *)" # Fires at 01:10 (UTC 0)
   actions {
     crawler_name = aws_glue_crawler.my_sql_crawler.name
   }
