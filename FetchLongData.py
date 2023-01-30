@@ -7,15 +7,13 @@ import pandas as pd
 from pandas.io.common import StringIO
 
 # Get the token for the API
-token = ## Add token here
-
+token = "djnK2W5vhk3W4fDZIZA9ka3Blr4ncJsv4R3mgFYK"
 # Headers for the api
 headers = {'x-api-key': token}
 
 # Selected start and end times
-#start_time = "2020-01-01T00:00:00+00:00"
-start_time = "2023-01-02T00:00:00+00:00"
-end_time = "2023-01-04T23:00:00+00:00"
+start_time = "2022-06-01T00:00:00+00:00"
+end_time = "2023-01-05T23:00:00+00:00"
 
 query = {
         "start_time": start_time,
